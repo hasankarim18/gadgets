@@ -1,7 +1,7 @@
 
 
 ## Live Link
-Hosted in Netlify -> [HeroGadget](https://my-gadget.netlify.app/)
+Hosted in Netlify -> [Gadget](https://my-gadget.netlify.app/)
 
 
 ## React Router Dom v6.4 
