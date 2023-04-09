@@ -1,13 +1,7 @@
-# HeroGadget Starter Repository
 
- Best E-commerce platform for buying high quality Smart Home Appliances at extremely affordable Price.
 
 ## Live Link
-Hosted in Netlify -> [HeroGadget](https://herogadget.netlify.app/)
-
-
-## Complete Project
-Github Repo -> [heroGadget-complete](https://github.com/shakilahmedatik/heroGadget-complete)
+Hosted in Netlify -> [HeroGadget](https://my-gadget.netlify.app/)
 
 
 ## React Router Dom v6.4 
