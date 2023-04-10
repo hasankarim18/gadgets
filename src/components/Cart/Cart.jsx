@@ -5,6 +5,8 @@ import CartItem from './CartItem';
 import { removeFromDb } from '../utils/fakeDB.JS';
 import { deleteShoppingCart } from '../utils/fakeDB.JS';
 import { CartContext } from '../../App';
+import { toast } from 'react-hot-toast';
+
 
 const Cart = () => {
   
@@ -31,6 +33,17 @@ const Cart = () => {
     setCart([])
     deleteShoppingCart()
    }
+
+   const orderHandler = ()=> {
+      if(cart.length> 0){
+        setCart([])
+        deleteShoppingCart()
+        return toast.success("Order done!!!")
+      }else {
+        return toast.error('Cart empty!!!')
+      }
+   }
+
 
     return (
       <>
@@ -68,7 +81,9 @@ const Cart = () => {
                   Back To Shop
                 </Link>
               )}
-              <button className="btn-primary">Place Order </button>
+              <button onClick={orderHandler} className="btn-primary">
+                Place Order{" "}
+              </button>
             </div>
           </div>
         </div>
