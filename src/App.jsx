@@ -13,6 +13,12 @@ const App = () => {
   const { cartArray, products } = useLoaderData();
   const [cart, setCart] = useState(cartArray);
 
+  const cartAlert = sessionStorage.getItem('alert') 
+
+  if(cart.length >0 && cartAlert !== 'true'){
+    alert('You have items in cart')
+    sessionStorage.setItem('alert', true)
+  }
   
   return (
     <>

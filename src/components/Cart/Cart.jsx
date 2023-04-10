@@ -26,21 +26,27 @@ const Cart = () => {
    const handleRemoveIem = (id)=> {
     const remaining = cart.filter(product => product.id !== id)
     setCart(remaining)
+    toast.error("Product removed. 🔥")
     removeFromDb(id)
    }
 
    const deleteCartHandler = ()=> {
-    setCart([])
-    deleteShoppingCart()
+   if (cart.length > 0) {
+     setCart([]);
+     deleteShoppingCart();
+     return toast.success("Cart cleared.👍");
+   } else {
+     return toast.error("Cart empty!!! 🔥");
+   }
    }
 
    const orderHandler = ()=> {
       if(cart.length> 0){
         setCart([])
         deleteShoppingCart()
-        return toast.success("Order done!!!")
+        return toast.success("Order done!!! 👍")
       }else {
-        return toast.error('Cart empty!!!')
+        return toast.error('Cart empty!!! 🔥')
       }
    }
 
