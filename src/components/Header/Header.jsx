@@ -1,10 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { ShoppingCartIcon } from '@heroicons/react/24/solid'
+import { CartContext } from '../../App'
 
 const Header = () => {
   const location = useLocation()  
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const {cart, setCart} = useContext(CartContext) || []
+
+  const cartLength = cart.length; 
+
+
 
  
 
@@ -54,13 +61,16 @@ const Header = () => {
             </NavLink>
           </li>
           <li>
-            <Link              
-              to="/cart"
-              aria-label="Cart"
-              title="Cart"
-            >
-              <div className="relative py-3">
-                <ShoppingCartIcon className={`h-6 w-6 ${location.pathname === '/cart'?"text-purple-500" :'text-cyan-600'}`} />
+            <Link to="/cart" aria-label="Cart" title="Cart">
+              <div className="relative py-3 flex">
+                <ShoppingCartIcon
+                  className={`h-6 w-6 ${
+                    location.pathname === "/cart"
+                      ? "text-purple-500"
+                      : "text-cyan-600"
+                  }`}
+                />
+                <sup className="text-xl">{cartLength}</sup>
               </div>
             </Link>
           </li>
@@ -97,6 +107,7 @@ const Header = () => {
               />
             </svg>
           </button>
+          {/* mobile menu */}
           {isMenuOpen && (
             <div className="absolute z-10 top-0 left-0 w-full">
               <div className="p-5 bg-white border rounded shadow-sm">
@@ -158,8 +169,9 @@ const Header = () => {
                         title="Cart"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        <div className="relative py-3">
+                        <div className="relative py-3 flex">
                           <ShoppingCartIcon className="h-6 w-6 text-cyan-400" />
+                        <sup className="text-xl">{cartLength}</sup>
                         </div>
                       </Link>
                     </li>
