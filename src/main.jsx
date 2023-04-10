@@ -7,6 +7,7 @@ import Home from './components/Home/Home'
 import About from './components/About/About'
 import ErrorPage from './components/Error/ErrorPage'
 import Shop from './components/Shop/Shop'
+import Cart from './components/Cart/Cart'
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,9 @@ const router = createBrowserRouter([
             {
                 path:'/about',
                 element: <About />
+            },{
+                path:"/cart",
+                element:<Cart />
             }
         ]
     }

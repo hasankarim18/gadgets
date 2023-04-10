@@ -10,7 +10,7 @@
   }
   
   .btn-primary{
-    @apply  font-medium  transition duration-200  shadow-md  md:mb-0  px-4 py-2 md:px-8 md:py-3 m-2 text-lg rounded-full border-transparent border-2  text-gray-700 hover:bg-cyan-400 bg-cyan-200
+    @apply  font-medium  transition duration-200  shadow-md  md:mb-0  px-4 py-2 md:px-8 md:py-3 m-2 text-lg rounded-sm border-transparent border-2  text-gray-700 hover:bg-cyan-400 bg-cyan-200
   }
 
   .btn-outlined{
@@ -18,11 +18,11 @@
   }
   
   .active{
-    @apply font-medium tracking-wide text-cyan-600 transition-colors duration-200
+    @apply font-bold text-xl tracking-wide text-purple-500  transition-colors duration-200
   }
   
   .default{
-    @apply font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-cyan-600
+    @apply font-medium text-xl tracking-wide text-gray-700  transition-colors duration-200 hover:text-cyan-600
   }
 
   
